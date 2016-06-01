@@ -1,2 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<title>大索科技</title>
+		<!--<meta http-equiv="Content-Type" content="text/html; charset=gb2312">-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+	<body>
+		<div class="container">
+			<div id="navigation_bar">
+				<div id="logo">
+				</div>
+				
+				<div id="navigation">
+					
+					
+					<p class="version"></p>
+					<div class="menu">
+						<div class="bpsnav">
+							<p class="pie6"><a href="./index.html">首 页<span>HOME</span></a></p>
+						</div>
+						<div class="bpsnav">
+							<p class="pico"><a href="/AboutUs.html" class="">关于DSAEL<span>ABOUT DSAEL</span></a></p>
+							<ul style="overflow: hidden; display: none; height: 130px; padding-top: 18px; margin-top: 0px; padding-bottom: 28px; margin-bottom: 0px;">
+								<li><a href="/AboutUs.html">DSASEL介绍</a></li>
+								<li><a href="/news.html">新闻动态</a></li>
+								<li><a href="/Partner.html">合作品牌</a></li>
+								<li><a href="/Honour.html">企业荣耀</a></li>
+								<li><a href="/ContactUs.html">联系我们</a></li>
+							</ul>
+						</div>
+						<div class="bpsnav">
+							<p class="pico"><a href="/Service5.html" class="">BIM解决方案<span>BIM SOLUTION</span></a></p>
+							<ul style="overflow: hidden; display: none; height: 78px; padding-top: 18px; margin-top: 0px; padding-bottom: 28px; margin-bottom: 0px;">                        
+								<li><a href="/Service5.html">机电深化</a></li>
+								<li><a href="/Service4.html">机电设计</a></li>
+								<li><a href="/Service3.html">机电顾问</a></li>
+							</ul>
+						</div>
+						<div class="bpsnav">
+							<p class="pico"><a href="/BIM.html" class="">项目案例<span>CASE</span></a></p>
+							<ul style="overflow: hidden; display: none; height: 78px; padding-top: 18px; margin-top: 0px; padding-bottom: 28px; margin-bottom: 0px;">                        
+								<li><a href="/bim3.html">装饰BIM</a></li>
+								<li><a href="/bim2.html">机电BIM</a></li>
+								<li><a href="/bim.html">BIM咨询</a></li>
 
-	aaaeeeexxxxx
+							</ul>
+						</div>
+				
+						<div class="bpsnav">
+							<p class="pico"><a href="/LIGHTING1.html" class="">联系我们<span>CALL US</span></a></p>
+							<ul style="overflow: hidden; display: none; height: 104px; padding-top: 18px; margin-top: 0px; padding-bottom: 28px; margin-bottom: 0px;">                        
+								<li><a href="/LIGHTING1.html">商业照明</a></li>
+							<li><a href="/LIGHTING3.html">办公照明</a></li>
+								<li><a href="/LIGHTING2.html">酒店照明</a></li>
+								<li><a href="/LIGHTING4.html">地铁照明</a></li>
+							</ul>
+						</div>
+					</div>
+					
+					
+				</div>
+			</div>
+			<div id="carousel">
+				
+				
+				
+				
+				
+				
+				<div class="flexslider">
+					<ul class="slides">
+						<li style="width: 100%; float: left; margin-right: -100%; display: none;"><a href="/Project/dalian.html"><img src="./images/carousel-01.png" alt="大连国际会议中心"></a></li>
+						<li style="width: 100%; float: left; margin-right: -100%; display: none;"><a href="/Project/coco.html"><img src="./images/carousel-01.png" alt="深圳星河龙岗COCOPARK"></a></li>
+						<li style="width: 100%; float: left; margin-right: -100%; display: none;"><a href="/Project/9.html"><img src="./images/carousel-01.png" alt="重庆凯并斯基酒店"></a></li>
+						<li style="width: 100%; float: left; margin-right: -100%; display: list-item;"><a href="/Project/3.html"><img src="./images/carousel-01.png" alt="宝能太古城"></a></li>   
+					</ul>
+				</div>
+						
+				
+				
+				
+				
+				
+				
+				
+			</div>
+			<div class="footer">
+			</div>
+		</div>
+		
+		<script type="text/javascript" src="./js/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.flexslider-min.js"></script>
+		<script type="text/javascript" src="./js/navigation.js"></script>
+		<script>
+			$(document).ready(function () {
+
+				$(".bpsnav").eq(0).children("p").addClass("psel");
+
+				$('.flexslider').flexslider();
+
+				// IE6 bug 模拟点击
+				if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
+					$(".slides li").hide().eq(0).show();
+				}
+				var _flex = $(".flex-control-nav > ol");
+				_flex.attr("style", "padding-left:" + parseInt((1000 - _flex.find("li").length * 18))/2 + "px");
+				
+				$(".slides > li").click(function(){
+					var ti = $(this).index();
+					var _this = $(".flex-control-nav a");
+					if((ti+2)>_this.length){
+						$(".flex-control-nav a").eq(0).click();
+					} else {
+						$(".flex-control-nav a").eq(ti+1).click();
+					}
+				});
+				
+			});
+		</script>
+	</body>
+</html>
